@@ -1,0 +1,29 @@
+div {
+
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+button {
+  width: 100%;
+}
+
+mat-list-item {
+  margin-bottom: 10px;
+}
+
+mat-form-field {
+}
+
+h3 {
+  margin-left: 15px;
+}
+
+
+
+
+

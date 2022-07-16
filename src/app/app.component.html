@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="header">
+  <mat-toolbar-row>
+    <span>
+      АИС УТОРППС | ООО "Свежачок"
+    </span>
+    <span class="spacer"></span>
+    <h3 *ngIf="router.url == '/products'">
+      &nbsp;| ПРОДУКТЫ
+    </h3>
+    <h3 *ngIf="router.url == '/partners'">
+      &nbsp;| ПАРТНЕРЫ
+    </h3>
+    <h3 *ngIf="router.url == '/supplier-operations'">
+      &nbsp;| ОПЕРАЦИИ ПО ПОСТАВКАМ
+    </h3>
+    <h3 *ngIf="router.url == '/consumer-operations'">
+      &nbsp;| ОПЕРАЦИИ ПО ПРОДАЖАМ
+    </h3>
+  </mat-toolbar-row>
+</mat-toolbar>
+<app-main-menu *ngIf="router.url !== '/login'"></app-main-menu>
+<router-outlet></router-outlet>
+
+

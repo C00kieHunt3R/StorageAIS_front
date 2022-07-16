@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="table-container">
+    <table mat-table [dataSource]="partners" class="demo-table">
+      <ng-container matColumnDef="companyName">
+        <th mat-header-cell *matHeaderCellDef>Наименование</th>
+        <td mat-cell *matCellDef="let element">{{element.companyName}}</td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Описание</th>
+        <td mat-cell *matCellDef="let element">{{element.description}}</td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let element">{{element.email}}</td>
+      </ng-container>
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef>Телефон</th>
+        <td mat-cell *matCellDef="let element">{{element.phone}}</td>
+      </ng-container>
+      <ng-container matColumnDef="partnerType">
+        <th mat-header-cell *matHeaderCellDef>Тип</th>
+        <td mat-cell *matCellDef="let element">
+          <ng-container [ngSwitch]="element.partnerType">
+            <div *ngSwitchCase="'SUPPLIER'">Поставщик</div>
+            <div *ngSwitchCase="'CONSUMER'">Покупатель</div>
+          </ng-container>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="created">
+        <th mat-header-cell *matHeaderCellDef>Создан</th>
+        <td mat-cell *matCellDef="let element">{{element.created | date: 'yyyy-MM-dd | HH:mm' : 'GMT+6'}}</td>
+      </ng-container>
+      <ng-container matColumnDef="updated">
+        <th mat-header-cell *matHeaderCellDef>Обновлен</th>
+        <td mat-cell *matCellDef="let element">{{element.updated | date: 'yyyy-MM-dd | HH:mm' : 'GMT+6'}}</td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Действия</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button (click)="set(element)">
+            <mat-icon matSuffix>create</mat-icon>
+          </button>
+          <button mat-button (click)="delete(element)">
+            <mat-icon matSuffix>delete_outline</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Выберите страницу">
+    </mat-paginator>
+  </div>
+  <div class="button-container">
+    <button mat-raised-button (click)="create()" class="demo-button" color="warn">
+      Добавить
+    </button>
+  </div>
+</div>
+

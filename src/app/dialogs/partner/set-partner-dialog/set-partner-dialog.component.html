@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Изменение информации о партнере</h1>
+<div mat-dialog-content>
+  <p>Введите данные:</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Наименование</mat-label>
+    <input matInput [(ngModel)]="partner.companyName">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Описание</mat-label>
+    <input matInput [(ngModel)]="partner.description">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="partner.email">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <input matInput [(ngModel)]="partner.phone">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Тип</mat-label>
+    <mat-select #typeSelector>
+      <mat-option *ngFor="let t of types" [value]="t">
+        {{t}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button mat-button (click)="onCancelClick()">Отмена</button>
+  <button mat-raised-button color="primary" (click)="setPartner()">Изменить</button>
+</div>

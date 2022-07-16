@@ -1,0 +1,48 @@
+<h1 mat-dialog-title>Новая поставка</h1>
+<div mat-dialog-content>
+  <p>Введите данные:</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Описание</mat-label>
+    <input matInput [(ngModel)]="supplierOperation.comment">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Цена</mat-label>
+    <input matInput [(ngModel)]="supplierOperation.price">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Получено</mat-label>
+    <input matInput [(ngModel)]="supplierOperation.received">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Партнер</mat-label>
+    <mat-select #partnersSelector>
+      <mat-option *ngFor="let partner of partners" [value]="partner">
+        {{partner.companyName}}
+      </mat-option>
+      <a routerLink="/partners">
+        <button mat-stroked-button class="selector-button" (click)="onCancelClick()">
+          Добавить партнера...
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </a>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Продукт</mat-label>
+    <mat-select #productsSelector>
+      <mat-option *ngFor="let product of products" [value]="product">
+        {{product.name}}
+      </mat-option>
+      <a routerLink="/products">
+        <button mat-stroked-button class="selector-button" (click)="onCancelClick()">
+          Добавить продукт...
+          <mat-icon>spa</mat-icon>
+        </button>
+      </a>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Отмена</button>
+  <button mat-raised-button color="primary" (click)="saveSupplierOperation()">Добавить</button>
+</div>

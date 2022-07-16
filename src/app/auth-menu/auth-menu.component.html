@@ -1,0 +1,32 @@
+<div class="menu">
+    <div class="container">
+      <h3>Ввод учётных данных</h3>
+      <form [formGroup]="form">
+        <mat-list>
+          <mat-list-item>
+            <mat-form-field appearance="fill">
+              <mat-label>Логин</mat-label>
+              <input matInput placeholder="Введите свой логин" name="login" [formControlName]="'login'">
+              <mat-icon matSuffix>login</mat-icon>
+            </mat-form-field>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-form-field appearance="fill">
+              <mat-label>Пароль</mat-label>
+              <input matInput placeholder="Введите свой пароль" type="password" [formControlName]="'password'">
+              <mat-icon matSuffix>password</mat-icon>
+            </mat-form-field>
+          </mat-list-item>
+          <mat-list-item>
+              <button mat-raised-button color="primary"
+                      (click)="loginRequest()">Вход</button>
+          </mat-list-item>
+          <mat-list-item>
+              <button mat-raised-button color="primary" (click)="registrationRequest()">Регистрация</button>
+          </mat-list-item>
+        </mat-list>
+      </form>
+    </div>
+</div>
+
+

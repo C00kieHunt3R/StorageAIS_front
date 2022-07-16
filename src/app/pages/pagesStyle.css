@@ -1,0 +1,31 @@
+.demo-table {
+  width: 100%;
+}
+
+.button-container {
+  padding-bottom: 16px;
+  max-width: 100px;
+  position: relative;
+  top: 20px;
+}
+
+.demo-button {
+  margin: 0px 8px 8px auto;
+  width: 150px;
+  text-align: center;
+}
+
+.container {
+  min-width: calc(100vw - 185px);
+  position: absolute;
+  top: 75px;
+  left: 170px;
+}
+
+h1 {
+  position: absolute;
+  top: 700px;
+}
+
+
+

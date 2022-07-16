@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Изменение информации о продукте</h1>
+<div mat-dialog-content>
+  <p>Введите данные:</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Наименование</mat-label>
+    <input matInput [(ngModel)]="product.name">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Описание</mat-label>
+    <input matInput [(ngModel)]="product.description">
+  </mat-form-field>
+  <mat-form-field appearance="fill" dataformatas="date">
+    <mat-label>Дата сбора урожая</mat-label>
+    <input matInput type="date" [(ngModel)]="product.cropDate">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Отпускная цена (за кг.)</mat-label>
+    <input matInput [(ngModel)]="product.currentOutPrice">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Количество (кг.)</mat-label>
+    <input matInput [(ngModel)]="product.totalValue">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button mat-button (click)="onCancelClick()">Отмена</button>
+  <button mat-raised-button color="primary" (click)="setProduct()">Изменить</button>
+</div>

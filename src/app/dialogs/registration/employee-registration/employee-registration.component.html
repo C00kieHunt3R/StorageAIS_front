@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Новый пользователь</h1>
+<div mat-dialog-content>
+  <p>Введите данные:</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Логин</mat-label>
+    <input matInput [(ngModel)]="employeeInfo.username">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Пароль</mat-label>
+    <input matInput [(ngModel)]="employeeInfo.password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Отмена</button>
+  <button mat-raised-button color="primary" (click)="register()">Зарегистрироваться</button>
+</div>
